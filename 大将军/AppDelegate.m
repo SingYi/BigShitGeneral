@@ -8,6 +8,14 @@
 
 #import "AppDelegate.h"
 
+#import "MainTabbarController.h"
+#import "LoginViewController.h"
+//#import "UMSocial.h"
+//#import "UMSocialQQHandler.h"
+//#import "UMSocialSinaSSOHandler.h"
+//#import "UMSocialWechatHandler.h"
+//#import <CoreData/CoreData.h>
+
 @interface AppDelegate ()
 
 @end
@@ -16,7 +24,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
+    LoginViewController *mainVc = [[LoginViewController alloc]init];
+    
+    self.window.rootViewController = mainVc;
+    //    self.window.userInteractionEnabled = YES;
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVc];
+    
+    self.window.rootViewController = nav;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+    <entity name="Dog" representedClassName="Dog" syncable="YES">
+        <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="iconImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="neutering" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="variety" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Owner" inverseName="dog" inverseEntity="Owner" syncable="YES"/>
+        <relationship name="record" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Record" inverseName="dog" inverseEntity="Record" syncable="YES"/>
+    </entity>
+    <entity name="Friends" representedClassName="Friends" syncable="YES">
+        <attribute name="iconImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="News" representedClassName="News" syncable="YES"/>
+    <entity name="Owner" representedClassName="Owner" syncable="YES">
+        <attribute name="account" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iconImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="dog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Dog" inverseName="owner" inverseEntity="Dog" syncable="YES"/>
+        <relationship name="workingDog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WalkingDog" inverseName="owner" inverseEntity="WalkingDog" syncable="YES"/>
+    </entity>
+    <entity name="Publish" representedClassName="Publish" syncable="YES"/>
+    <entity name="Record" representedClassName="Record" syncable="YES">
+        <attribute name="coronavirus" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="delivery" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="distemper" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="ininsecticide" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="neutering" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="other" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="outinsecticide" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="ppv" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="pregnant" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="rabies" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="toxoplasma" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="dog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Dog" inverseName="record" inverseEntity="Dog" syncable="YES"/>
+    </entity>
+    <entity name="Remark" representedClassName="Remark" syncable="YES"/>
+    <entity name="WalkingDog" representedClassName="WalkingDog" syncable="YES">
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Owner" inverseName="workingDog" inverseEntity="Owner" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Dog" positionX="-54" positionY="27" width="128" height="165"/>
+        <element name="Friends" positionX="-18" positionY="144" width="128" height="90"/>
+        <element name="News" positionX="-18" positionY="135" width="128" height="45"/>
+        <element name="Owner" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Publish" positionX="18" positionY="180" width="128" height="45"/>
+        <element name="Record" positionX="-27" positionY="90" width="128" height="225"/>
+        <element name="Remark" positionX="-27" positionY="126" width="128" height="45"/>
+        <element name="WalkingDog" positionX="0" positionY="171" width="128" height="60"/>
+    </elements>
+</model>
